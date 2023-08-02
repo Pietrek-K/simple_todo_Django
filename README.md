@@ -1,1 +1,2 @@
-# simple_todo_Django
+# Simple Todo in Django 
+### First project using Django
