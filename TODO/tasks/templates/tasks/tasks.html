@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<header class="todo__header">
+        <form method="POST">
+            {% csrf_token %}
+            <h3>Todo App</h3>
+            {{form.name}}
+            <input type="submit" class="task_add" name="task_entry" value="Add">
+        </form>
+</header>
+<div class="todo__tasks">
+    {% for task in tasks %}
+        {% if task.value == 'during' %}
+        <div class="todo__task--during">
+            <strong class="todo__task--info">{{task.name}}</strong>
+                <div class="todo__task--action">
+                    <form method="POST">
+                            {% csrf_token %}
+                            <a href="{% url 'complete-task' task.id %}" ><i>&#10003;</i></a>
+                            <a href="{% url 'edit-task' task.id %}" ><i>&#9998;</i></a>
+                            <a href="{% url 'delete-task' task.id %}" ><i>&#10005;</i></a>
+                    </form>
+                </div>
+            </div>
+    {% else %}
+<div class="todo__task--finished">
+            <strong class="todo__task--info">{{task.name}}</strong>
+                <div class="todo__task--action">
+                    <form method="POST">
+                            {% csrf_token %}
+                            <a href="{% url 'delete-task' task.id %}"><i>&#10005;</i></a>
+                    </form>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+{% endblock content %}

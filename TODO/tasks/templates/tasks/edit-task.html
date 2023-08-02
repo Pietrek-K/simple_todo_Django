@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<header class="todo__header">
+        <form method="POST">
+            {% csrf_token %}
+            <h3>Edit task</h3>
+            {{form.name}}
+            <input type="submit" class="task_add" name="task_entry" value="Edit">
+        </form>
+</header>
+
+{% endblock %}
+
+
+

@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<header class="todo__header">
+        <form method="POST">
+            {% csrf_token %}
+            <h3>Did you complete task?</h3>
+            <input type="submit" class="task_complete" name="task_entry" value="Yes">
+<a href="{% url 'todo'%}" class="task_delete">No</a>
+        </form>
+</header>
+
+
+{% endblock  %}

@@ -1,0 +1,132 @@
+body{
+
+    background: rgb(252,201,254);
+    background: linear-gradient(118deg, rgba(252,201,254,1) 0%, rgba(208,113,232,1) 50%, rgba(123,14,187,1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+
+.todo__container{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 800px;
+background-color: rgba(255, 255, 255, 0.99);
+background-image: linear-gradient(106deg, rgba(255, 255, 255, 0.99) 0%, rgba(247, 229, 188, 1) 50%, rgba(247, 184, 36, 1) 100%);
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.todo__header{
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.task_add,
+.task_delete,
+.task_complete{
+    color:white;
+    background-color: #1460f7;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0, 0.4);
+    border:none;
+    border-radius: 5px;
+    padding: 10px;
+    transition:0.4s;
+    text-decoration: none;
+}
+
+.task_add:hover{
+    background-color: #064ad1;
+}
+
+.task_delete{
+    background-color:#e32222;
+     
+}
+
+.task_delete:hover{
+ background-color: #db1212;
+}
+
+.task_complete{
+    background-color: #4edb12;
+}
+
+.task_complete:hover{
+    background-color: #42b510;
+}
+
+.task_entry{
+    box-shadow: 2px 2px 5px rgb(0, 0, 0, 0.4);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    transition: 0.4s;
+    outline: none;
+    
+}
+
+.task_entry:focus{
+    border: 1px solid #1460f7;
+}
+
+.todo__tasks{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+}
+
+.todo__task--during,
+.todo__task--finished{
+    flex:0.01;
+    display: flex;
+    background-color: #E6F890;
+    border: 2px solid #97B600;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    margin: 5px 25px 0px 25px;
+}
+
+
+.todo__task--finished{
+    background-color: #F38D9D;
+    border: 2px solid #B2001C;
+}
+
+.todo__task--finished strong{
+
+    text-decoration: line-through;
+}
+
+.todo__task--info{
+    flex:0.8;
+    display: flex;
+    justify-content:start;
+    align-items:center ;
+    margin-left: 10px;
+}
+
+.todo__task--action{
+    flex:0.20;
+    display: flex;
+    justify-content:space-around;
+    padding-top: 10px;
+}
+
+.todo__task--action a{
+    font-size:1.7em ;
+    text-decoration: none;
+    color: black;
+}
+
+.todo__task--action a:hover{
+    color: red;
+}
